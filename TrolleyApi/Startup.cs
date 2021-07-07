@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using TrolleyApi.Excercise1;
 using TrolleyApi.Exercise2.ApiProxies;
 using TrolleyApi.Exercise2.Services;
+using TrolleyApi.Exercise3.Services;
 
 namespace TrolleyApi
 {
@@ -33,7 +34,10 @@ namespace TrolleyApi
                 .AddTransient<IUserService, UserService>()
                 .AddTransient<IProductSortService, PriceSortService>()
                 .AddTransient<IProductSortService, NameSortService>()
-                .AddTransient<IProductSortService, PopularitySortService>();
+                .AddTransient<IProductSortService, PopularitySortService>()
+                .AddTransient<ISpecialPriceProcessorService, SpecialPriceProcessorService>()
+                .AddTransient<INormalPriceProcessorService, NormalPriceProcessorService>()
+                .AddTransient<ITrolleyTotalService, TrolleyTotalService>();
 
             services.AddApplicationInsightsTelemetry("793d0275-757d-41a8-a127-253b475a3fc9");
             

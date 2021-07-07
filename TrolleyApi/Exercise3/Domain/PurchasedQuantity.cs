@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace TrolleyApi.Exercise3.Domain
 {
@@ -9,6 +10,16 @@ namespace TrolleyApi.Exercise3.Domain
 
         [JsonIgnore]
         public double QuantityCalculatedForBill { get; private set; }
-       
+
+        public double QuantityRemainingToBeBilled => Quantity - QuantityCalculatedForBill;
+
+        public void MarkQuantityAsBilled(double quantity)
+        {
+            if (QuantityCalculatedForBill + quantity > Quantity)
+                throw new ValidationException("Stock is exhausted");
+
+            QuantityCalculatedForBill += quantity;
+        }
+
     }
 }
