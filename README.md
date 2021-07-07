@@ -1,4 +1,4 @@
-# TrolleyApi
+# **TrolleyApi**
 
 The API consists of three endpoints
 * User : Gets the user details for the token
@@ -9,7 +9,9 @@ o Product Popularity : Based on shopping history
 * Trolleytotal : I have implemented the logic provided by api/resorce/trolleycalculator.. Following is the logic
 o If the purchase list has specials then apply the special price on the purchase list items in the multiples of the special list item quantity. The remaining items will have the normal price
 
-Improvements possible
+**Third Party Libraries**
+Refit : It provides a type safe HttpClientFactory which is used to get the Products and Shopping hostory data.
+**Improvements possible**
 
 If I get more time, I would like to implement following improvements to the solution
 * Implement logging and exception handling. The logs and exception can be analysed using Azure ApplicationInsight.
